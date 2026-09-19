@@ -115,9 +115,9 @@ The ecosystem repositories are structured across six modular tiers:
 
 All innovations are published under the **Sovereign Resource Commons License 1.0** (Apache 2.0 with LLVM Exception and the Sovereign Reciprocal Commons Rider).
 
-- **Full Commercial Freedom**: Commercial monetization, enterprise deployment, and software distribution are permitted and welcomed for all builders, startups, and developers.
-- **Reciprocal Weight Release ($25M Qualifying Enterprise Clause)**: Entities with over $25M in revenue or funding that train upon this work must release the resulting model weights publicly. Builders and startups below $25M are fully exempt.
-- **Open Improvements**: Enhancements deployed in commercial SaaS must be contributed back under the same terms.
+- **Hardware & Cloud Infrastructure Optimization Welcomed**: Whether NVIDIA adopts our stack to optimize silicon throughput or RunPod deploys it to maximize GPU bandwidth for customers, infrastructure optimization is 100% permitted and encouraged.
+- **Anti-Enclosure Model Weight Covenant ($25M Qualifying Enterprise Clause)**: We reject artificial token meters, subscription tollbooths, and paywalls on intelligence. Large enterprises ($25M+ revenue or funding) cannot ingest our code, architecture, or reasoning traces to train foundation models only to lock those resulting weights behind closed commercial token paywalls. Any large enterprise training on this work must release the resulting model weights openly to humanity under reciprocal terms. Startups and builders below $25M are fully exempt.
+- **Open Improvements**: Direct modifications to core engine files deployed in commercial networked SaaS must be contributed back under the same terms.
 
 ---
 
