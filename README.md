@@ -36,6 +36,9 @@ AIEN eliminates interpreter overhead by compiling all core services directly to 
 | **Response Latency** | 38.40 ms (FastAPI p50) | **3.56 ms** (`cortex-rs` p50) | **10x faster response**. Agents search memory and dispatch tools instantaneously with zero lag. |
 | **Request Throughput** | 214 req/s | **2,056 req/s** | A single workstation handles the concurrent request throughput of an entire server cluster. |
 | **INT8 Vectorization** | External API / PyTorch | **4.09 ms** (`cortex-encoder`) | Local embedding indexing on device without API costs, tokens, or network delays. |
+| **Subagent Fork Latency** | 192.00 ms (Memory Copy) | **0.39 µs** (`aien-kv-cache`) | **4,977x speedup**. Instant zero-copy agent branching saving 37.5 GB to 187.5 GB unified RAM. |
+| **KV Cache Allocation** | 12.5 ms (Python Allocator) | **7.44 ns** (`aien-kv-cache`) | **134.3 million blocks/sec**. Sub-microsecond native physical block pooling. |
+| **Memory Search Under Load** | Degrades at C=20 | **2,103 req/s** (`cortex-rs`) | 100% success rate at 100 concurrent callers with only +2.60 MB memory delta. |
 
 For raw telemetry data files, SVG comparison charts, and verification scripts, see the dedicated [**aien-dev/benchmarks**](https://github.com/aien-dev/benchmarks) repository.
 
