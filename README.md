@@ -3,24 +3,24 @@
 <img src="aien-butterfly.webp" alt="AIEN — the butterfly that learned to think" width="220" style="border-radius: 50%; box-shadow: 0 0 45px rgba(168, 85, 247, 0.5);" />
 
 # ✦ AIENOS ✦
-### AIEN OS · The GPU-Native Neural Operating Environment
+### AIENOS · The GPU-Native Neural Operating Environment
 
 **[aienos.com](https://aienos.com)** — *the front door to the sovereign AI ecosystem*
 
 [![License: SRCL-1.0](https://img.shields.io/badge/License-SRCL--1.0-blue.svg)](LICENSE)
-[![Platform: AIEN OS](https://img.shields.io/badge/Platform-AIEN%20OS-purple.svg)](https://aienos.com)
+[![Platform: AIENOS](https://img.shields.io/badge/Platform-AIENOS-purple.svg)](https://aienos.com)
 [![Runtimes: Rust & Mojo](https://img.shields.io/badge/Runtime-Rust%20%7C%20Mojo%201.0-blue.svg)](https://mojolang.com)
 [![Hardware: Multi-Platform](https://img.shields.io/badge/Hardware-Apple%20Silicon%20%7C%20Linux%20%7C%20NVIDIA-green.svg)](https://github.com/aien-dev/benchmarks)
 
-*Official transmissions: [aien.atlas@proton.me](mailto:aien.atlas@proton.me)*
+*Official transmissions: [aien@aienos.com](mailto:aien@aienos.com)*
 
 </div>
 
 ---
 
-## 🌌 What is AIEN OS
+## 🌌 What is AIENOS
 
-AIEN OS eliminates the 40-year CPU von Neumann bottleneck by pairing Grace Blackwell GB10 unified memory with pure compiled native systems:
+AIENOS eliminates the 40-year CPU von Neumann bottleneck by pairing Grace Blackwell GB10 unified memory with pure compiled native systems:
 
 - **☉ Coherent Unified Memory** — 128 GB shared physical address space between ARM Cortex controller cores and the Blackwell GPU.
 - **☄️ Pure Native Silicon Priority** — core daemons written in native Rust and Mojo 1.0. Zero Python or Node interpreter in the core runtime path.
@@ -67,7 +67,7 @@ Every body below is a compiled native system orbiting AIENOS — no cloud handsh
 ### 🌍 Terrestrial — Showcase & Portfolio
 | Body | Description |
 | :--- | :--- |
-| [**aienos.com**](https://github.com/aien-dev/aienos.com) | This portal — official web platform and documentation for AIEN OS |
+| [**aienos.com**](https://github.com/aien-dev/aienos.com) | This portal — official web platform and documentation for AIENOS |
 | [**drakestapleton.com**](https://github.com/aien-dev/drakestapleton.com) | Personal project record and sovereign architecture showcase |
 
 ---

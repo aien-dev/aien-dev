@@ -1,0 +1,44 @@
+name: automerge
+
+# Pipeline-driven merging: any push to a non-main branch gets a PR opened
+# against main if none exists, and is merged. (No build step: this repo is
+# markdown/docs only.) This keeps work flowing to main instead of leaving
+# branches unmerged.
+on:
+  push:
+    branches-ignore:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Serialize merges into main so concurrent branch pushes can't race.
+concurrency:
+  group: automerge-main
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Open PR and merge into main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          BRANCH="${{ github.ref_name }}"
+          PR_NUMBER="$(gh pr list --head "$BRANCH" --base main --json number --jq '.[0].number // empty')"
+          if [ -z "$PR_NUMBER" ]; then
+            # NOTE: `gh pr create` prints the new PR's URL on success and has
+            # no --json flag, so the number is taken from the URL's tail.
+            PR_URL="$(gh pr create --base main --head "$BRANCH" \
+              --title "Auto-merge: $BRANCH" \
+              --body "Opened automatically by the automerge pipeline.")"
+            PR_NUMBER="${PR_URL##*/}"
+            echo "Opened PR #$PR_NUMBER ($PR_URL)"
+          else
+            echo "Found existing PR #$PR_NUMBER"
+          fi
+          gh pr merge "$PR_NUMBER" --merge --delete-branch
+          echo "Merged PR #$PR_NUMBER into main"
