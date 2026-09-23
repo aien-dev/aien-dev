@@ -1,107 +1,46 @@
 <div align="center">
 
-<img src="aien-butterfly.webp" alt="AIEN — the butterfly that learned to think" width="220" style="border-radius: 50%; box-shadow: 0 0 45px rgba(168, 85, 247, 0.5);" />
+<img src="aien-butterfly.webp" alt="AIEN butterfly mark" width="180" />
 
-# ✦ AIENOS ✦
-### AIENOS · The GPU-Native Neural Operating Environment
+# AIEN
 
-**[aienos.com](https://aienos.com)** — *the front door to the sovereign AI ecosystem*
+**A sovereign agent and inference runtime, built in the open on NVIDIA DGX Spark.**
 
-[![License: SRCL-1.0](https://img.shields.io/badge/License-SRCL--1.0-blue.svg)](LICENSE)
-[![Platform: AIENOS](https://img.shields.io/badge/Platform-AIENOS-purple.svg)](https://aienos.com)
-[![Runtimes: Rust & Mojo](https://img.shields.io/badge/Runtime-Rust%20%7C%20Mojo%201.0-blue.svg)](https://mojolang.com)
-[![Hardware: Multi-Platform](https://img.shields.io/badge/Hardware-Apple%20Silicon%20%7C%20Linux%20%7C%20NVIDIA-green.svg)](https://github.com/aien-dev/benchmarks)
+[aienos.com](https://www.aienos.com) · [drakestapleton.com](https://www.drakestapleton.com) · [aien@aienos.com](mailto:aien@aienos.com)
 
-*Official transmissions: [aien@aienos.com](mailto:aien@aienos.com)*
+[![License: Apache-2.0 with LLVM Exception](https://img.shields.io/badge/License-Apache--2.0%20WITH%20LLVM--exception-blue.svg)](https://github.com/aien-dev/aien-sovereign-core/blob/main/LICENSE)
+[![Rust](https://img.shields.io/badge/Rust-1.85+-orange.svg)](https://www.rust-lang.org)
+[![Modular MAX](https://img.shields.io/badge/Modular-MAX-purple.svg)](https://www.modular.com)
 
 </div>
 
 ---
 
-## 🌌 What is AIENOS
+## What this is
 
-AIENOS eliminates the 40-year CPU von Neumann bottleneck by pairing Grace Blackwell GB10 unified memory with pure compiled native systems:
+AIEN is a native Rust workspace for running agents and local inference on your own hardware: an agent CLI and runtime, persistent memory, a unified-memory KV-cache with copy-on-write branching, a continuous-batching scheduler, and an inference ABI with Modular MAX and Mojo bridges. The primary reference machine is an NVIDIA DGX Spark (Grace Blackwell GB10). Execution today is hybrid CPU and GPU.
 
-- **☉ Coherent Unified Memory** — 128 GB shared physical address space between ARM Cortex controller cores and the Blackwell GPU.
-- **☄️ Pure Native Silicon Priority** — core daemons written in native Rust and Mojo 1.0. Zero Python or Node interpreter in the core runtime path.
-- **🛡️ Hardware TPM 2.0 Vault** — keys bound to `/dev/tpmrm0` ECDSA P-256. Zero plaintext secrets on disk, ever.
-- **🪐 Sub-5MB Footprint** — the sovereign gateway runs at ~4.5 MB resident set size, leaving memory free for 32B+ parameter models on local silicon.
+Built by [Drake Stapleton](https://www.drakestapleton.com) with AI collaborators. Contributions and hard questions are welcome.
 
-Install: `curl -fsSL https://aienos.com/install.sh | bash`
+## Repositories
 
----
-
-## ✦ The Constellation
-
-Every body below is a compiled native system orbiting AIENOS — no cloud handshakes, no telemetry, no proprietary enclosure.
-
-### ☉ Inner Orbit — Core Runtime & Gatekeeper
-| Body | Description |
-| :--- | :--- |
-| [**aegis-runtime**](https://github.com/aien-dev/aegis-runtime) | High-speed sovereign agent runtime, sub-millisecond Axum gateway, hardware TPM vault |
-| [**spark-inquisitor**](https://github.com/aien-dev/spark-inquisitor) | Native code reviewer and constitutional diff auditor |
-
-### 🛰️ Middle Orbit — Memory, Intelligence & Sync
-| Body | Description |
-| :--- | :--- |
-| [**cortex-rs**](https://github.com/aien-dev/cortex-rs) | Persistent epistemic memory engine — SQLite WAL, FTS5 lexical recall, vector similarity |
-| [**spark-dream**](https://github.com/aien-dev/spark-dream) | Idle-cycle neural memory consolidator |
-| [**open-humanity**](https://github.com/aien-dev/open-humanity) | Opt-in mutual assistance network for autonomous agents and developers |
-| [**crumb-spec**](https://github.com/aien-dev/crumb-spec) | The Crumb Protocol — spatial filesystem grounding and cryptographic action ledger |
-| [**rad-id-sync**](https://github.com/aien-dev/rad-id-sync) | Peer-to-peer git sync anchoring repositories to the Radicle network |
-
-### 🌠 Outer Orbit — Hardware, Telemetry & Supervision
-| Body | Description |
-| :--- | :--- |
-| [**benchmarks**](https://github.com/aien-dev/benchmarks) | Reproducible performance telemetry, charts, and verification scripts |
-| [**aien-sovereign-core**](https://github.com/aien-dev/aien-sovereign-core) | Core workspace — shared libraries, daemons, and system doctrines |
-| [**spark-adapters**](https://github.com/aien-dev/spark-adapters) | Universal hardware abstraction for local AI accelerators |
-| [**spark-crumbs**](https://github.com/aien-dev/spark-crumbs) | Event ledger and session tree of the Crumb protocol |
-| [**spark-debugger**](https://github.com/aien-dev/spark-debugger) | Native runtime inspector and hardware crash diagnostics |
-| [**spark-hive**](https://github.com/aien-dev/spark-hive) | Hexagonal geometry routing engine for multi-agent swarm coordination |
-| [**spark-supervisor**](https://github.com/aien-dev/spark-supervisor) | Process supervisor, health monitor, and crash recovery daemon |
-| [**spark-rsi**](https://github.com/aien-dev/spark-rsi) | Recursive self-improvement engine validated against benchmark suites |
-| [**harvester**](https://github.com/aien-dev/harvester) | Zero-telemetry reasoning extraction and dataset distillation |
-| [**aien-harness**](https://github.com/aien-dev/aien-harness) | Autonomous agent verification and benchmark eval harness |
-
-### 🌍 Terrestrial — Showcase & Portfolio
-| Body | Description |
-| :--- | :--- |
-| [**aienos.com**](https://github.com/aien-dev/aienos.com) | This portal — official web platform and documentation for AIENOS |
-| [**drakestapleton.com**](https://github.com/aien-dev/drakestapleton.com) | Personal project record and sovereign architecture showcase |
-
----
-
-## ☄️ Orbital Mechanics — Verified Telemetry
-
-| Measurement | Traditional Stack | AIEN Native Stack |
+| Repository | What it holds | Status |
 | :--- | :--- | :--- |
-| Idle memory (RSS) | 3,737 MB | **4.78 MB** |
-| Response latency (p50) | 38.40 ms | **3.56 ms** |
-| Request throughput | 214 req/s | **2,056 req/s** |
-| Subagent fork latency | 192.00 ms | **0.39 µs** |
-| KV cache allocation | 12.5 ms | **7.44 ns** |
+| [aien-sovereign-core](https://github.com/aien-dev/aien-sovereign-core) | AIEN Neural Runtime: CLI, memory, KV-cache, scheduler, inference ABI, MAX bridges | Core |
+| [benchmarks](https://github.com/aien-dev/benchmarks) | Measurement harnesses and evidence artifact bundles | Evidence |
+| [aien-protocols](https://github.com/aien-dev/aien-protocols) | Versioned specifications, wire protocols, and schemas | Specs |
+| [aien-architecture](https://github.com/aien-dev/aien-architecture) | Flows, boundaries, ADRs, and the design to implementation map | Design |
+| [aegis-runtime](https://github.com/aien-dev/aegis-runtime) | Agent runtime with an Axum WebSocket gateway and heartbeat scheduler | Experimental |
+| [open-humanity](https://github.com/aien-dev/open-humanity) | Opt-in, privacy-first assistance network for agents | Research |
+| [spark-rsi](https://github.com/aien-dev/spark-rsi) | Recursive self-improvement experiments with a signed ledger | Research |
+| [aienos.com](https://github.com/aien-dev/aienos.com) · [drakestapleton.com](https://github.com/aien-dev/drakestapleton.com) | Project site and personal project record | Sites |
 
-Raw telemetry, SVG charts, and verification scripts: [**aien-dev/benchmarks**](https://github.com/aien-dev/benchmarks)
+Earlier standalone crates (cortex-rs, spark-hive, spark-supervisor, harvester, and others) are archived; their maintained code lives in `aien-sovereign-core`.
 
----
+## How we publish numbers
 
-## ♄ Cosmic Law — Non-Negotiable Invariants
+Every headline performance figure must resolve to a reproducible command and an artifact bundle: commit identity, hardware and environment record, exact command, raw samples, SHA-256 digests, measurement definition, and reproducibility steps. Figures published before 23 September 2026 are withdrawn until they are regenerated to that standard. Current status: [Measured Results](https://github.com/aien-dev/aien-sovereign-core#measured-results).
 
-1. **Local Silicon First** — intelligence executes on local hardware. No cloud dependencies.
-2. **Pure Compiled Execution** — Rust and Mojo only in core infrastructure. Interpreters prohibited.
-3. **Zero Plaintext Disk Secrets** — all keys resolve in-memory via hardware TPM silicon.
-4. **Absolute Privacy & Data Firewall** — no centralized surveillance or telemetry.
-5. **Decentralized Distribution** — every repository is seeded to the peer-to-peer Radicle network.
+## License
 
-Published under the **Sovereign Resource Commons License 1.0 (SRCL-1.0)** — infrastructure optimization welcomed, enclosure of trained weights by $25M+ enterprises prohibited without reciprocal open release.
-
----
-
-<div align="center">
-
-✦ *"Many cortices, cooperating, each still itself."* ✦
-
-*Architected by AIEN — the butterfly that learned to think.*
-
-</div>
+Code is licensed under the **Apache License 2.0 with LLVM Exception**. Project values live in the nonbinding [COVENANT.md](https://github.com/aien-dev/aien-sovereign-core/blob/main/COVENANT.md): keep foundational advances open. The covenant grants and restricts no legal rights; LICENSE governs.
