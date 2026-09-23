@@ -38,7 +38,7 @@ Every body below is a compiled native system orbiting AIENOS — no cloud handsh
 ### ☉ Inner Orbit — Core Runtime & Gatekeeper
 | Body | Description |
 | :--- | :--- |
-| [**openclaw-rs**](https://github.com/aien-dev/openclaw-rs) | High-speed sovereign agent runtime, sub-millisecond Axum gateway, hardware TPM vault |
+| [**aegis-runtime**](https://github.com/aien-dev/aegis-runtime) | High-speed sovereign agent runtime, sub-millisecond Axum gateway, hardware TPM vault |
 | [**spark-inquisitor**](https://github.com/aien-dev/spark-inquisitor) | Native code reviewer and constitutional diff auditor |
 
 ### 🛰️ Middle Orbit — Memory, Intelligence & Sync
