@@ -1,3 +1,7 @@
+## Copyright
+
+Copyright (c) 2026 Drake Stapleton <aien@aienos.com> and AIEN Contributors. Authored by Drake Stapleton in collaboration with AIEN.
+
 <div align="center">
 
 <img src="aien-butterfly.webp" alt="AIEN butterfly mark" width="180" />
@@ -8,7 +12,7 @@
 
 [aienos.com](https://www.aienos.com) · [drakestapleton.com](https://www.drakestapleton.com) · [aien@aienos.com](mailto:aien@aienos.com)
 
-[![License: Apache-2.0 with LLVM Exception](https://img.shields.io/badge/License-Apache--2.0%20WITH%20LLVM--exception-blue.svg)](https://github.com/aien-dev/aien-sovereign-core/blob/main/LICENSE)
+[![License: AGPL-3.0-or-later](https://img.shields.io/badge/License-AGPL--3.0--or--later-blue.svg)](https://github.com/aien-dev/aien-sovereign-core/blob/main/LICENSE)
 [![Rust](https://img.shields.io/badge/Rust-1.85+-orange.svg)](https://www.rust-lang.org)
 [![Modular MAX](https://img.shields.io/badge/Modular-MAX-purple.svg)](https://www.modular.com)
 
@@ -43,4 +47,4 @@ Every headline performance figure must resolve to a reproducible command and an 
 
 ## License
 
-Code is licensed under the **Apache License 2.0 with LLVM Exception**. Project values live in the nonbinding [COVENANT.md](https://github.com/aien-dev/aien-sovereign-core/blob/main/COVENANT.md): keep foundational advances open. The covenant grants and restricts no legal rights; LICENSE governs.
+Code is licensed under the **GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later)**. See [LICENSE](LICENSE). Project values live in the nonbinding [COVENANT.md](https://github.com/aien-dev/aien-sovereign-core/blob/main/COVENANT.md): keep foundational advances open. The covenant grants and restricts no legal rights; LICENSE governs.
