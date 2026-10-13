@@ -22,7 +22,7 @@ Built by [Drake Stapleton](https://www.drakestapleton.com) with AI collaborators
 
 ## Status at a glance (2026-10-09)
 
-This is research-grade, pre-alpha software. Nothing here is qualified on real hardware as a finished system. Every line below links to the record it comes from; if the record and this page disagree, the record wins. Evidence labels: CPU = host tests on the Spark, GB10 = Linux-hosted GPU runs on the DGX Spark, QEMU = emulated. Only QEMU and host results exist for AIENOS; nothing there is native-hardware evidence.
+This is research-grade, pre-alpha software. Nothing here is qualified on real hardware as a finished system. Every line below links to the record it comes from; if the record and this page disagree, the record wins. Evidence labels: CPU = host tests on the Spark, GB10 = Linux-hosted GPU runs on the DGX Spark, QEMU = emulated. AIENOS evidence is QEMU and host results plus one native boot: the M2 Rust kernel ran on Machine 1 at EL2 with no Linux underneath, Secure Boot off ([M2 evidence](https://github.com/aien-dev/aienos/blob/main/evidence/m2_first_boot_2026-09-24.md)). The C kernel has not booted natively.
 
 **Works today, with receipts**
 
@@ -31,7 +31,7 @@ This is research-grade, pre-alpha software. Nothing here is qualified on real ha
 - AIENOS C kernel in the emulator: all 24 QEMU gates PASS, 0 NOT_RUN, at aienos `7f0de7e` ([receipt](https://github.com/aien-dev/aienos/blob/main/evidence/ck_gates_29ed03c97454354a18676f768273dd7f7a8e15462c4be1939d9994d277d0d639.json), [gate list](https://github.com/aien-dev/aienos/blob/main/native/kernel/GATES.md)). Merged since 2026-10-04, all QEMU only: operator keyboard input and recovery access, one-time boot rollback (8 cases), multi-segment PCI discovery with NVMe found and bound, SMMU stream tables, and the OSH shell core running as kernel tasks with a step trace equal to Linux.
 - GPU native path: structured reconvergence (BSSY/BSYNC) implemented with GB10 T1 to T4 PASS ([omega #310](https://github.com/aien-dev/omega/pull/310)); E1 numerics closed on the chip ([omega README](https://github.com/aien-dev/omega#current-state)); Prime Drag Race sieve: the native path ties the CUDA mirror and runs 20.3x the frozen baseline ([campaign](https://github.com/aien-dev/benchmarks/blob/main/prime-drag-race/CAMPAIGN-2026-10-05.md)).
 - Legacy Rust runtime (aien-sovereign-core): builds, lints and tests green in CI ([CI](https://github.com/aien-dev/aien-sovereign-core/actions)); policy decides before any tool runs ([authority tests](https://github.com/aien-dev/aien-sovereign-core/blob/main/crates/aien-mcp/tests/authority.rs)); the approval desk is required by default and composed proposals need authenticated approval with replay protection; ALLEN identity, persona and scoped memory run host-side under the accepted ADR 0035 ([ADR](https://github.com/aien-dev/aien-architecture/blob/main/docs/adr/0035-persistent-cognitive-entity-boundary-allen.md)).
-- INTERPLANE 0.3.0: trust report with all gates PASS ([report](https://github.com/aien-dev/interplane/blob/main/docs/REPORT-0.3.md), [status](https://github.com/aien-dev/interplane/blob/main/STATUS.md)); Verifiable Autonomous Computing milestones M1 to M5 done on 2026-10-08: a real model turn chained to a judged, approved and acknowledged file effect, with an independently judged change through the approved path (CPU) ([VAC plan](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/vac/PLAN.md)).
+- INTERPLANE 0.3.0: trust report with all gates PASS ([report](https://github.com/aien-dev/interplane/blob/main/docs/REPORT-0.3.md), [status](https://github.com/aien-dev/interplane/blob/main/STATUS.md)); Verifiable Autonomous Computing milestones M1 to M5 done on 2026-10-08: a scripted model turn chained to a judged, approved and acknowledged file effect, with an independently judged change through the approved path (CPU); every recorded run is scripted and ends `PASS_LABELLED_INCOMPLETE`, and a real model is a later row ([VAC plan](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/vac/PLAN.md)).
 
 **Experimental (host only, not in a qualified build)**
 
@@ -39,7 +39,7 @@ This is research-grade, pre-alpha software. Nothing here is qualified on real ha
 - Omega Systems Core compiler: OSC-1 and OSC-2 implemented with host receipts, OSC-3 in progress; there is no general Omega compiler and it is not self-hosting ([omega README](https://github.com/aien-dev/omega#current-state)). The OSC unit artifact container v1 is frozen with conformance vectors ([aien-protocols](https://github.com/aien-dev/aien-protocols/blob/main/specs/osc-unit-artifact/OSC_UNIT_ARTIFACT.md)), and OSH, the Omega shell, runs on the Linux host with a durable intent and outcome journal ([OSH record](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/osh-r1/OSH-R1.md)).
 - Open-licence model path: Qwen3-4B-Instruct-2507 matches the reference on the CPU and, with the page cache dropped once, on the GB10 for one prefill. Its frozen campaign v5 is FAIL: 8 of 11 tasks pass, three refused by the requirement checks ([verdict](https://github.com/aien-dev/aien-sovereign-core/blob/main/docs/campaigns/open-model-qwen3/VERDICT-v5.md)). SmolLM2 also failed. No open-licence model has passed yet.
 - FORGE machine realization: the substrate-neutral descriptor contract (AR1) passed its gates ([physics](https://github.com/aien-dev/physics)).
-- AT-0, a clock-free execution charter with frozen case and result contracts, is NOT_RUN ([charter](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/atemporal/AT0_CHARTER.md)).
+- AT-0, a clock-free execution charter with frozen case and result contracts, was REVIEWED on 2026-10-10: software conformance PASS on the tested classes, blinded qualification INCONCLUSIVE (UNISOLATED), physical claims NOT TESTED ([charter](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/atemporal/AT0_CHARTER.md), [results](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/atemporal/AT0_RESULTS.md)). Its follow-on AT-1 is also REVIEWED ([AT-1 charter](https://github.com/aien-dev/aien-architecture/blob/main/docs/plans/atemporal/AT1_CHARTER.md)).
 
 **Blocked or not done**
 
@@ -74,9 +74,9 @@ Other repositories (aegis-runtime, open-humanity, spark-rsi, atlas, aien-edge an
 ## Standing rules
 
 - Language rule: Rust is scaffolding, Omega is the destination, and C or assembly only where hardware, boot, or a measurement justifies it. Nothing already merged is reverted ([ADR 0024](https://github.com/aien-dev/aien-architecture/blob/main/docs/adr/0024-rust-scaffolding-omega-destination.md)).
-- No Python anywhere, including helper scripts.
+- No Python anywhere, including helper scripts. The one exception is [interplane](https://github.com/aien-dev/interplane), an open protocol for outside hosts, which ships a Python reference SDK and conformance runner beside its Rust ones.
 - No CUDA toolkit and no dependence on vendor CUDA libraries. The GB10 is driven by our own native path.
-- No systemd in AIENOS boot, init, services or tooling.
+- No systemd in AIENOS boot, init, services or tooling. Host-side scripts and operator steps that still use it are flagged, each with the replacement it owes, in [SOVEREIGNTY_FLAGS.md](https://github.com/aien-dev/aienos/blob/main/docs/SOVEREIGNTY_FLAGS.md).
 - Builds are offline and in-house for the trusted base. No outside dependency may be required to build, boot or recover it.
 - Outside inference stacks (Modular MAX, llama.cpp, vLLM) are yardsticks only, kept in [aien-yardsticks](https://github.com/aien-dev/aien-yardsticks); nothing from them ships in AIEN.
 - Every performance figure must resolve to a reproducible command and a content-addressed evidence bundle. Old figures without one are withdrawn.
@@ -84,11 +84,11 @@ Other repositories (aegis-runtime, open-humanity, spark-rsi, atlas, aien-edge an
 
 ## How to help
 
-Start with [AIENOS issues labelled `good first issue` or `emulator-ok`](https://github.com/aien-dev/aienos/issues). Those need no special hardware. Read each repository's CONTRIBUTING or AGENTS file first.
+Start with AIENOS issues labelled [`help wanted`](https://github.com/aien-dev/aienos/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22help%20wanted%22) or [`emulator-ok`](https://github.com/aien-dev/aienos/issues?q=is%3Aissue%20is%3Aopen%20label%3Aemulator-ok). Those need no special hardware. Read each repository's CONTRIBUTING or AGENTS file first.
 
 ## License and values
 
-Code across the AIEN repositories is licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later); see each repository's LICENSE. aien-protocols also uses the Community Specification License 1.0 for its specifications. Project values live in the nonbinding [COVENANT.md](COVENANT.md): keep foundational advances open. The covenant grants and restricts no legal rights; LICENSE governs. Governance text for agents working in these repositories: [CONSTITUTION.md](CONSTITUTION.md) and [AGENT_CODE_OF_CONDUCT.md](AGENT_CODE_OF_CONDUCT.md).
+Code across the AIEN repositories is licensed under the GNU Affero General Public License v3.0 or later (AGPL-3.0-or-later); see each repository's LICENSE. The exception is interplane: Apache-2.0 for the protocol, schemas, fixtures and reference SDKs, with its adapters licensed to match their host projects ([licensing ADR](https://github.com/aien-dev/interplane/blob/main/docs/adr/0002-licensing.md)). aien-protocols also uses the Community Specification License 1.0 for its specifications. Project values live in the nonbinding [COVENANT.md](COVENANT.md): keep foundational advances open. The covenant grants and restricts no legal rights; LICENSE governs. Governance text for agents working in these repositories: [CONSTITUTION.md](CONSTITUTION.md) and [AGENT_CODE_OF_CONDUCT.md](AGENT_CODE_OF_CONDUCT.md).
 
 ## Copyright
 
