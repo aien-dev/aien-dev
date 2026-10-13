@@ -79,7 +79,7 @@ Other repositories (aegis-runtime, open-humanity, spark-rsi, atlas, aien-edge an
 - No CUDA toolkit and no dependence on vendor CUDA libraries. The GB10 is driven by our own native path.
 - No systemd in AIENOS boot, init, services or tooling. Host-side scripts and operator steps that still use it are flagged, each with the replacement it owes, in [SOVEREIGNTY_FLAGS.md](https://github.com/aien-dev/aienos/blob/main/docs/SOVEREIGNTY_FLAGS.md).
 - Builds are offline and in-house for the trusted base. No outside dependency may be required to build, boot or recover it.
-- Outside inference stacks (Modular MAX, llama.cpp, vLLM) are yardsticks only, kept in [aien-yardsticks](https://github.com/aien-dev/aien-yardsticks); nothing from them ships in AIEN.
+- Outside inference stacks (Modular MAX, llama.cpp, vLLM) are yardsticks only; the ones in use today (a Modular MAX adapter, a Hugging Face Transformers reference and a CUDA mirror) are kept in [aien-yardsticks](https://github.com/aien-dev/aien-yardsticks). Nothing from them ships in AIEN.
 - Every performance figure must resolve to a reproducible command and a content-addressed evidence bundle. Old figures without one are withdrawn.
 - Changes land through pull requests with the commands run and their output. Main branches on the core repositories are protected; no automatic merging.
 
